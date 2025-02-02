@@ -9,6 +9,10 @@ type ProductHistoryEntity struct {
 	OrderClosed string  `gorm:"column:order_closed"`
 }
 
+func (ProductHistoryEntity) TableName() string {
+	return "price_history"
+}
+
 func NewProductHistoryEntity(
 	productId string,
 	price float64,

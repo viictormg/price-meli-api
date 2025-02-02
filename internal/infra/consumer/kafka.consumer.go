@@ -7,7 +7,6 @@ import (
 	"os/signal"
 	"strings"
 	"syscall"
-	"time"
 
 	"github.com/IBM/sarama"
 	"github.com/viictormg/price-meli-api/config"
@@ -75,14 +74,12 @@ func (k *KafkaConsumer) Consume() {
 				case err := <-pc.Errors():
 					fmt.Println("Error consuming message: ", err)
 				case msg := <-pc.Messages():
-
 					event := domain.Event{
 						Key:   string(msg.Key),
 						Value: string(msg.Value),
 					}
 
 					k.service.GetPriceHistory(event)
-					time.Sleep(1 * time.Second)
 				}
 			}
 		}(pc)
