@@ -1,20 +1,14 @@
-### Ejecucion price-api-meli
+### Ejecución price-api-meli
 
-para la api “price-api-meli” los pasos son mas pocos, que la mayoria de dependencias están definidas en el docker-compose de product
 
-1. entrar la carpeta donde está el proyecto
     
-    ```bash
-    cd price-api-meli
-    ```
-    
-2. despues de estar en el directorio del repositorio ejecutamos el comando para instalar las dependencias 
+1. ejecutar el comando para instalar dependencias
     
     ```bash
     go mod tidy 
     ```
     
-3. tambien debes crear un archivo .env en la raiz del proyecto y pegar el siguiente codigo
+2. crear un archivo .env en la raiz del proyecto y pegar el siguiente codigo
     
     ```bash
     DB_HOST=localhost
@@ -26,7 +20,7 @@ para la api “price-api-meli” los pasos son mas pocos, que la mayoria de depe
     KAFKA_TOPIC=price
     ```
     
-4. ahora solo falta ejecutar nuestra api
+3. ahora solo falta ejecutar nuestra api
     
     ```bash
     go run cmd/main
