@@ -56,7 +56,7 @@ func (k *KafkaConsumer) Consume() {
 
 	go func() {
 		<-sigchan
-		fmt.Println("\nInterrupt signal received. Closing consumers...")
+		fmt.Println("Interrupt signal received. Closing consumers...")
 		cancel()
 	}()
 

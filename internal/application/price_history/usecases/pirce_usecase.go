@@ -2,7 +2,6 @@ package usecases
 
 import (
 	"encoding/json"
-	"time"
 
 	"github.com/viictormg/price-meli-api/internal/application/price_history/dto"
 	"github.com/viictormg/price-meli-api/internal/application/price_history/ports"
@@ -43,5 +42,4 @@ func (u *PriceUsecase) GetPriceHistory(event domain.Event) {
 	}
 
 	u.repository.CreateBulkProductHistory(pricesToInsert)
-	time.Sleep(500 * time.Millisecond)
 }
